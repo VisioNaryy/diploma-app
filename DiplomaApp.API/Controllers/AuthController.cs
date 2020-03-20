@@ -50,6 +50,7 @@ namespace DiplomaApp.API.Controllers {
         [HttpPost("login")]
         public async Task<IActionResult> Login(UserForLoginDto userForLoginDto)
         {
+            
             //checking, that user is exists in database
             var userFromRepo = await _repo.Login(userForLoginDto.Username.ToLower(), userForLoginDto.Password);
 
@@ -90,7 +91,7 @@ namespace DiplomaApp.API.Controllers {
 
             return Ok(new {
                 token = tokenHandler.WriteToken(token)
-            });
+            });  
         }
     }
 }
