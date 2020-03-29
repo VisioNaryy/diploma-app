@@ -15,7 +15,8 @@ namespace DiplomaApp.API.Data
         }
         public async Task<User> Login(string username, string password)
         {
-            var user = await _context.Users.FirstOrDefaultAsync(x => x.Username == username);
+            // Include(p => p.Photos) will return a collection of photos along with the user and will be available
+            var user = await _context.Users.Include(p => p.Photos).FirstOrDefaultAsync(x => x.Username == username);
 
             if(user==null)
                 return null;
