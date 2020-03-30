@@ -19,7 +19,7 @@
       <!-- if user is not logged in, this div will be removed -->
       <span class="mr-1">
         <!-- <img src="{{authService.currentUser.photoUrl}}" alt=""> -->
-        <img src="{{photoUrl}}" alt="">
+        <img src="{{photoUrl || '../../../../../assets/user.png'}}" alt="">
       </span>
       <a class="btn  dropdown-toggle text-light" dropdownToggle>
         Welcome {{authService.decodedToken?.unique_name | titlecase}}
