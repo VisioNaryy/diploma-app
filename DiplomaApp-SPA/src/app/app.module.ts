@@ -11,6 +11,8 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 import { FileUploadModule } from 'ng2-file-upload';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { TimeagoModule } from 'ngx-timeago';
+// import { TimeAgoPipe } from 'time-ago-pipe';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
@@ -34,8 +36,6 @@ import { MemberEditResolver } from './_resolvers/member-edit.resolver';
 import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
 import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
 
-
-
 export function tokenGettter() {
    return localStorage.getItem('token');
 }
@@ -46,6 +46,7 @@ export function tokenGettter() {
 //       rotate: { enable: false}
 //    };
 // }
+
 
 @NgModule({
    declarations: [
@@ -60,7 +61,7 @@ export function tokenGettter() {
       MemberCardComponent,
       MemberDetailComponent,
       MemberEditComponent,
-      PhotoEditorComponent
+      PhotoEditorComponent,
    ],
    imports: [
       BrowserModule,
@@ -74,6 +75,7 @@ export function tokenGettter() {
       RouterModule.forRoot(appRoutes),
       NgxGalleryModule,
       FileUploadModule,
+      TimeagoModule.forRoot(),
       JwtModule.forRoot({
          config: {
             tokenGetter: tokenGettter,

@@ -4,10 +4,12 @@ using System.Threading.Tasks;
 using AutoMapper;
 using DiplomaApp.API.Data;
 using DiplomaApp.API.Dtos;
+using DiplomaApp.API.Helpers;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DiplomaApp.API.Controllers {
+    [ServiceFilter(typeof(LogUserActivity))]
     [Authorize]
     [Route ("api/[controller]")]
     [ApiController]

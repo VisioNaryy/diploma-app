@@ -61,6 +61,7 @@ namespace DiplomaApp.API
                 //in controllers where [Authorize] attribute is located, 
                 //all methods below are protected because of this middleware
                 //and they authorized by the token
+                services.AddScoped<LogUserActivity>(); //needs to create a new instance of this service per request
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
