@@ -12,6 +12,9 @@ import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 import { FileUploadModule } from 'ng2-file-upload';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { TimeagoModule } from 'ngx-timeago';
+import { PaginationModule } from 'ngx-bootstrap/pagination';
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
+// import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 // import { TimeAgoPipe } from 'time-ago-pipe';
 
 import { AppComponent } from './app.component';
@@ -76,6 +79,9 @@ export function tokenGettter() {
       NgxGalleryModule,
       FileUploadModule,
       TimeagoModule.forRoot(),
+      ButtonsModule.forRoot(),
+      // NgbModule,
+      PaginationModule.forRoot(),
       JwtModule.forRoot({
          config: {
             tokenGetter: tokenGettter,
